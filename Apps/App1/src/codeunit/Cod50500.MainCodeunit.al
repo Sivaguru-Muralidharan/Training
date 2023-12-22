@@ -14,7 +14,7 @@ codeunit 50500 "Main Codeunit"
     begin
         CustomerRec.Get(CustNo);
         CustomerRec.CalcFields("Balance (LCY)");
-        exit(CustomerRec."Balance (LCY)");
+        exit(CustomerRec.Balance);
     end;
 
     /// <summary>
@@ -23,13 +23,16 @@ codeunit 50500 "Main Codeunit"
     procedure ListCustomerWithNoLocation()
     var
         CustomerRec: Record Customer;
+
     begin
         Message('Caliiing a List-customer-with-no-location function from code unit');
         CustomerRec.SetFilter("Location Code", '<>%1', '');
         CustomerRec.Setrange("No.", '01121212');
         if CustomerRec.findSet then begin
             Message('Customre Name : %1', CustomerRec.Name);
+
         end;
+        Message('Aravinds');
 
     end;
 }
