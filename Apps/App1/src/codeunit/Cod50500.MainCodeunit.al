@@ -7,6 +7,10 @@ codeunit 50500 "Main Codeunit"
         CustomerRec.Get(CustNo);
         CustomerRec.CalcFields("Balance (LCY)");
         exit(CustomerRec."Balance (LCY)");
+        Message('Customer Balance');
+        CustomerRec.setrange("CustNo", '10000')
+        if customerRec.findfirst then
+            Message('Customer Balance is %1', "Balance (LCY)");
     end;
 
     procedure ListCustomerWithNoLocation()
