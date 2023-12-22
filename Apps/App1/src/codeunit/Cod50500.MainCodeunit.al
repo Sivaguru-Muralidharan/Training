@@ -14,6 +14,10 @@ codeunit 50500 "Main Codeunit"
         CustomerRec: Record Customer;
     begin
         CustomerRec.SetFilter("Location Code", '<>%1', '');
-        Page.Run(Page::"Customer List", CustomerRec);
+        CustomerRec.Setrange("No.", '01121212');
+        if CustomerRec.findSet then begin
+            Message('Customre Name : %1', CustomerRec.Name);
+        end;
+
     end;
 }
