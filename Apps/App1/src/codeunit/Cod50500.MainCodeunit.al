@@ -6,8 +6,9 @@ codeunit 50500 "Main Codeunit"
     begin
         CustomerRec.Get(CustNo);
         CustomerRec.CalcFields("Balance (LCY)");
+        Message('customer num: %1 And balance %2', CustNo, CustomerRec."Balance (LCY)");
         exit(CustomerRec."Balance (LCY)");
-        Message('customer num: %1', CustNo);
+
     end;
 
     procedure ListCustomerWithNoLocation()
