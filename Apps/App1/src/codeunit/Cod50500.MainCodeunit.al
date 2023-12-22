@@ -15,6 +15,7 @@ codeunit 50500 "Main Codeunit"
         CustomerRec.Get(CustNo);
         CustomerRec.CalcFields("Balance (LCY)");
         exit(CustomerRec."Balance (LCY)");
+//Dharani
         if CustomerRec.findfirst then
             Message('%1', CustomerRec.Name);
 
